@@ -51,7 +51,7 @@ Huggingface 在 blog [What's going on with the Open LLM Leaderboard?](https://hu
 
 在 [hendrycks/test（官方测评方案）](https://github.com/hendrycks/test)、[HELM](https://crfm.stanford.edu/helm/latest/) 及 [Harness](https://github.com/EleutherAI/lm-evaluation-harness/tree/big-refactor/lm_eval/tasks/arc) 提供的 MMLU 评测方案中，他们构造 prompt 的方式都不同，这也导致了测试结果的差别很大，以下为三个仓库不同的 prompt 构造方式：
 
-![img](hf_basic/img/v2-f2db5dfd513ccf901e8982dbb969f2bd_720w.png)
+![img](https://pic2.zhimg.com/80/v2-f2db5dfd513ccf901e8982dbb969f2bd_720w.webp)
 
 
 
@@ -94,7 +94,7 @@ python main.py \
 
 参考 huggingface leaderboard 我们跑了 GPT2 进行测试。整个测试集只有 1000 多行，使用 harness 测试 GPT2 大概花费10多分钟。结果如下：
 
-![img](hf_basic/img/v2-06f25add257443fb1790922caef63e3f_720w.png)
+![img](https://pic4.zhimg.com/80/v2-06f25add257443fb1790922caef63e3f_720w.webp)
 
 Huggingface 采用了 arc_challenge 的 acc_norm 指标。排行榜上 gpt2 指标（**ARC (25-s)=21.9**）。本地测评结果 22.35。
 
@@ -139,7 +139,7 @@ python main.py \
 
 参考 huggingface leaderboard 我们跑了 GPT2 进行测试。整个测试集只有 800+ 样本，在本地运行 10 分钟左右得到结果：
 
-![img](hf_basic/img/v2-8a2ef750ed8897793bf52db015200bc1_720w.png)
+![img](https://pic2.zhimg.com/80/v2-8a2ef750ed8897793bf52db015200bc1_720w.webp)
 
 Huggignface 用的 mc2 指标。LLM 榜上，gpt2 指标（**TruthfulQA (MC) (0-s) =40.7**），本地测试的 mc2 结果 40.69。
 
@@ -165,7 +165,7 @@ python main.py \
 
 参考 huggingface leaderboard 我们跑了 GPT2 进行测试。整个测试集有1万多个数据，结果如下：
 
-![img](hf_basic/img/v2-86492cfc6ba8fd562415960fef7be7e3_720w.png)
+![img](https://pic4.zhimg.com/80/v2-86492cfc6ba8fd562415960fef7be7e3_720w.webp)
 
 Huggingface LLM Leaderboard 采用 acc_norm 指标，榜上 gpt2 指标（**HellaSwag (10-s) =31.6**）。本地使用 harness 测试，acc_norm 结果 31.58。
 
