@@ -94,7 +94,7 @@ python main.py \
 
 参考 huggingface leaderboard 我们跑了 GPT2 进行测试。整个测试集只有 1000 多行，使用 harness 测试 GPT2 大概花费10多分钟。结果如下：
 
-![img](https://pic4.zhimg.com/80/v2-06f25add257443fb1790922caef63e3f_720w.webp)
+![img](https://pic1.zhimg.com/80/v2-06f25add257443fb1790922caef63e3f_720w.png?source=d16d100b)
 
 Huggingface 采用了 arc_challenge 的 acc_norm 指标。排行榜上 gpt2 指标（**ARC (25-s)=21.9**）。本地测评结果 22.35。
 
