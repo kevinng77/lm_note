@@ -23,7 +23,7 @@ GPT 系列的模型，预训练时候就是通过 next token prediction，在海
 
 ![image-20230718143705596](./img/image-20230718143705596.png)
 
-**重点！重点！重点！**在实际训练当中，我们是对所有 target 统一进行预测的，比如 “今天天气真好，我们出去看电影吧”。如果我们在训练过程中输入 “今天天气真好，”， 那么模型应该对 “我们出去看电影吧” 这几个token 分别计算 CrossEntropy，而后进行反向传播优化。整个过程中我们只进行了一次前向传播。
+**重点！重点！重点！** 在实际训练当中，我们是对所有 target 统一进行预测的，比如 “今天天气真好，我们出去看电影吧”。如果我们在训练过程中输入 “今天天气真好，”， 那么模型应该对 “我们出去看电影吧” 这几个token 分别计算 CrossEntropy，而后进行反向传播优化。整个过程中我们只进行了一次前向传播。
 
 而在推理过程中，我们是一个字一个字进行预测的，比如我们输入 "今天天气真好，"，模型会先推理出下一个字是 “我”；而后将 "今天天气真好，我" 传入到模型中，进行下一次预测。下图就是一个解码的例子：
 
@@ -57,7 +57,7 @@ Below is an instruction that describes a task. Write a response that appropriate
 ### Response: 1.Eat a balanced diet and make sure to include plenty of fruits and vegetables. 2. Exercise regularly to keep your body active and strong. 3. Get enough sleep and maintain a consistent sleep schedule."
 ```
 
-**重点！重点！重点！**为什么需要这样处理文本呢？直接让模型输入 `Give three tips for staying healthy. ` ，然后预测 `1.Eat a balanced diet and make sure to include plenty of fruits and vegetables. 2. Exercise regularly to keep your body active and strong. 3. Get enough sleep and maintain a consistent sleep schedule.` 不行吗？
+**重点！重点！重点！** 为什么需要这样处理文本呢？直接让模型输入 `Give three tips for staying healthy. ` ，然后预测 `1.Eat a balanced diet and make sure to include plenty of fruits and vegetables. 2. Exercise regularly to keep your body active and strong. 3. Get enough sleep and maintain a consistent sleep schedule.` 不行吗？
 
 + Alpaca 是基于 LLaMa 训练的，因此 Alpaca 遵从 LLaMa 的模板进行额外的训练是很有必要的。
 
@@ -89,12 +89,11 @@ assistant: {assistant_response_2}
 
 4. **对于目前的微调任务，我们需要如何准备训练数据集？**
 
+这取决于我们的任务，通常，如果你想制作一个像 chatGPT 一样的对话机器人 APP，那么你的数据集就应该收集成 QA 问答对的形式；如果你想做代码助手，或者代码自动填充 APP，那么你的训练集就可以是简单的一传代码，而不需要整理成 QA 形式。
+但目前看来 QA 形式的 APP 受众更广，因此我们会优先考虑收集问答数据集。
+
+
+## reference
+
 image source: https://twitter.com/cwolferesearch/status/1669811217148289026
 
-
-
-
-
-
-
-![image-20230718143635568](hf_basic/img/image-20230718143635568.png)
