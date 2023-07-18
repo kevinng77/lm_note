@@ -33,6 +33,10 @@ GPT 系列的模型，预训练时候就是通过 next token prediction，在海
 
 3. **NLP 的训练数据是怎么样的？**
 
+> 既然我们知道，对于 CasualLM（GPT 类型）的模型，训练时候都是通过 next-token-prediction 来优化的，训练出来的模型，自然就只会进行续写。那么我们需要怎么设置，让模型能够实现像 ChatGPT 一样的问答功能呢？
+
+答案就是 prompt engineering! （回顾以下我们在 ChatGPT API 的实验中做了什么）
+
 我们看到 [alpaca 数据集](https://huggingface.co/datasets/tatsu-lab/alpaca)，以 Alpaca 的数据为例子，可以看到 alpaca 数据大致分为 instruction，input 还有 output 三个属性。这三个属性会根据以下模板进行拼接，并传送到模型当中进行 next-word-prediction 优化。
 
 ```python
